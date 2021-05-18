@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12 col-lg-3 mb-4" *ngFor="let dataItem of EmployeeList">
+        <img src="{{PhotoUrl}}{{dataItem.PhotoFileName}}" alt="{{dataItem.EmployeeName}}"
+        class="w-100 shadow-1-strong rounded" alt="" />
+        <a href="{{PhotoUrl}}{{dataItem.PhotoFileName}}" download>Download</a>
+      </div>
+    </div>
+  </div>
+</div>

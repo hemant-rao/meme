@@ -1,0 +1,58 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 col-lg-8 mb-3">
+                <div class="form-froup row">
+                    <label class="col-sm-2 col-form-label mb-3">Text form image</label>
+                    <div class="col-sm-10 mb-3" *ngIf="EmployeeName != undefined">
+                        <textarea type="text" class="form-control" [(ngModel)]="EmployeeName"
+                            placeholder="Enter Employee Name"></textarea>
+                    </div>
+                    <label class="col-sm-2 col-form-label mb-3">Category</label>
+                    <div class="col-sm-10 mb-3">
+                        <select class="form-control" [(ngModel)]="Department">
+                            <option>--Select--</option>
+                            <option *ngFor="let depName of DepartmentsList">
+                                {{depName.DepartmentName}}
+                            </option>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 col-form-label mb-3">Date of joining</label>
+                    <div class="col-sm-10 mb-3">
+                        <input type="date" [(ngModel)]="DateOfJoining">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 mb-3">
+                <!-- <div class="text-center bd-highlight">
+                    <div class="image-upload">
+                        <img class="rounded">
+                        <input type="file" class="rounded" (change)="uploadPhoto($event, test)" />
+                    </div>
+                </div> -->
+                <div for="upload" class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                    <input id="upload" type="file" for="upload" (change)="uploadPhoto($event, test)" class="form-control border-0">
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                    <div for="upload" class="input-group-append">
+                        <label for="upload" class="btn btn-light m-0 rounded-pill px-4">
+                            <i for="upload" class="fa fa-cloud-upload mr-2 text-muted"></i>
+                            <small for="upload" class="text-uppercase font-weight-bold text-muted">Choose file</small>
+                        </label>
+                    </div>
+                </div>
+                <div class="image-area mt-4">
+                    <img [src]=PhotoFilePath alt="Upload image here"
+                        class="img-fluid rounded shadow-sm mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button (click)="addEmployee()" *ngIf="emp.EmployeeId==0" class="btn btn-primary right">
+        Add Image
+    </button>
+    <button (click)="updateEmployee()" *ngIf="emp.EmployeeId!=0" class="btn btn-primary">
+        Update Image
+    </button>
+</div>

@@ -1,0 +1,23 @@
+  #detailsModal.modal.fade .modal-dialog {
+    opacity: 1;
+  }
+
+  .modal-dialog.fullwidth--box {
+    width: 90%;
+    max-width: 90%;
+    height: auto;
+    margin: 5% auto;
+  }
+
+  .modal-content.no--shadow {
+    border: 0;
+    box-shadow: none !important;
+  }
+
+  #detailsModal.modal.fade.in .modal-dialog {
+    opacity: 1;
+  }
+
+  div#detailsModal {
+    background: #ccc;
+  }
