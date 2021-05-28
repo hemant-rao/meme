@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  APIUrl: "http://127.0.0.1:8000",
-  PhotoUrl: "http://127.0.0.1:8000/media/",
+  APIUrl: "http://hemantrao.pythonanywhere.com/",
+  PhotoUrl: "http://hemantrao.pythonanywhere.com/media/",
 };
 
 /*

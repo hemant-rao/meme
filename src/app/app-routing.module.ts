@@ -18,6 +18,8 @@ const routes: Routes = [
     ],
   },
   { path: 'home', component: HomeComponent },
+  { path: 'employee', component: EmployeeComponent },
+  { path: 'department', component: DepartmentComponent },
   { path: '**', component: HomeComponent },
 ];
 

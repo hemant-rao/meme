@@ -11,9 +11,9 @@ export class SharedService {
   readonly APIUrl = environment.APIUrl;
   readonly PhotoUrl = environment.PhotoUrl;
   constructor(private http:HttpClient) { } 
-  // headers= new HttpHeaders()
-  //   .set('content-type', 'application/json')
-  //   .set('Access-Control-Allow-Origin', '*');
+  headers= new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
 
   getDepList():Observable<any[]>{
     // return this.http.get<any[]>(this.APIUrl + '/department/');
