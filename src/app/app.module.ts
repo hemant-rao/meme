@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { RouterModule } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,31 @@ import { AdminComponent } from './admin/admin.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot([{
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full' 
+    },
+    {
+      path: 'home',
+      component: HomeComponent 
+    },
+    {
+      path: 'admin',
+      component: AdminComponent,
+      children: [
+        { path: 'employee', component: EmployeeComponent },
+        { path: 'department', component: DepartmentComponent },
+      ],
+    },
+    {
+      path: '**',
+      redirectTo: '',
+      pathMatch: 'full' 
+    }
+  ])
   ],
-  providers: [SharedService],
+  providers: [SharedService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

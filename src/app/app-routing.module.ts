@@ -10,6 +10,11 @@ const routes: Routes = [
   // {path:'admin/employee',component:EmployeeComponent},
   // {path:'admin/department',component:DepartmentComponent},
   {
+    path: "",
+    redirectTo: "home",
+    pathMatch: 'full' 
+  },
+  {
     path: 'admin',
     component: AdminComponent,
     children: [
@@ -18,8 +23,6 @@ const routes: Routes = [
     ],
   },
   { path: 'home', component: HomeComponent },
-  { path: 'employee', component: EmployeeComponent },
-  { path: 'department', component: DepartmentComponent },
   { path: '**', component: HomeComponent },
 ];
 

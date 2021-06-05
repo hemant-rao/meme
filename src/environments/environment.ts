@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  APIUrl: "http://hemantrao.pythonanywhere.com/",
+  APIUrl: "http://hemantrao.pythonanywhere.com",
   PhotoUrl: "http://hemantrao.pythonanywhere.com/media/",
 };
 
