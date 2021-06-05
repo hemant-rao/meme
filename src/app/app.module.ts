@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+// import lazyLoading
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    LazyLoadImageModule,
     RouterModule.forRoot([{
       path: '',
       redirectTo: 'home',
@@ -49,8 +52,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       path: 'admin',
       component: AdminComponent,
       children: [
-        { path: 'employee', component: EmployeeComponent },
-        { path: 'department', component: DepartmentComponent },
+        { path: 'meme-upload', component: EmployeeComponent },
+        { path: 'category', component: DepartmentComponent },
       ],
     },
     {

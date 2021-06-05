@@ -12,8 +12,10 @@ export class HomeComponent implements OnInit {
   constructor(private service: SharedService) {}
   readonly APIUrl = environment.APIUrl;
   readonly PhotoUrl = environment.PhotoUrl;
+  defaultImage = "anonymous.jpg";
   ngOnInit(): void {
     this.refreshEmpList();
+    this.defaultImage = this.PhotoUrl+this.defaultImage;
   }
   refreshEmpList() {
     this.service.getEmpList().subscribe((data) => {
