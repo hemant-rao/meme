@@ -52,8 +52,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
       path: 'admin',
       component: AdminComponent,
       children: [
-        { path: 'meme-upload', component: EmployeeComponent },
-        { path: 'category', component: DepartmentComponent },
+        { path: 'employee', component: EmployeeComponent },
+        { path: 'department', component: DepartmentComponent },
       ],
     },
     {
