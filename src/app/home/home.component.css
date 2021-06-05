@@ -1,0 +1,7 @@
+img {
+    height: unset;
+}
+.modal-body img {
+    /* height: calc(100vh - 50px); */
+    max-height: 70vh;
+}

@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   readonly APIUrl = environment.APIUrl;
   readonly PhotoUrl = environment.PhotoUrl;
   defaultImage = "anonymous.jpg";
+  imageName: any;
+  showCurrentImageURL: any;
   ngOnInit(): void {
     this.refreshEmpList();
     this.defaultImage = this.PhotoUrl+this.defaultImage;
@@ -21,5 +23,11 @@ export class HomeComponent implements OnInit {
     this.service.getEmpList().subscribe((data) => {
       this.EmployeeList = data;
     });
+  }
+  showImage(dataItem: any){
+    this.imageName = dataItem.EmployeeName;
+    this.showCurrentImageURL = this.PhotoUrl+dataItem.PhotoFileName;
+    console.log("dataItem", this.showCurrentImageURL);
+    
   }
 }

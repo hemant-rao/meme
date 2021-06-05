@@ -38,7 +38,6 @@ export class ShowEmpComponent implements OnInit {
   }
 
   editClick(item){
-    console.log(item);
     this.emp=item;
     this.ModalTitle="Edit Image Description";
     this.ActivateAddEditEmpComp=true;
