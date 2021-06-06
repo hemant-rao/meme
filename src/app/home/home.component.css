@@ -40,3 +40,30 @@ img {
     border: 0;
     outline: 0;
 }
+.close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    color: #000;
+    opacity: .75;
+}
+.close img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+    color: #000;
+}
