@@ -2,7 +2,9 @@
   <div class="col-12">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let dataItem of EmployeeList">
-        <img width="300" height="300" (click)="showImage(dataItem)" class="w-100 shadow-1-strong rounded"
+        <img width="300" height="300" (click)="showImage(dataItem)" attr.data-id = "{{dataItem.EmployeeId}}" 
+        [ngClass]="dataItem.EmployeeId == currentId ? 'w-100 shadow-1-strong rounded active' : 'w-100 shadow-1-strong rounded hemant'"
+
           [defaultImage]="defaultImage" [lazyLoad]="PhotoUrl+dataItem.PhotoFileName" alt="{{dataItem.EmployeeName}}"
           data-toggle="modal" data-target="#detailsModal" data-keyboard="false" />
         <a href="{{PhotoUrl}}{{dataItem.PhotoFileName}}" download>Download</a>
@@ -10,30 +12,28 @@
     </div>
   </div>
 </div>
-<div class="modal fade fullwidth" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel"
+<div class="modal fade fullwidth" id="detailsModal" (click)="gotoTop()" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel"
   aria-hidden="true">
   <div class="modal-dialog fullwidth--box modal-dialog-centered" role="document">
     <div class="modal-content no--shadow">
       <div class="modal-body" *ngIf="showCurrentImageURL != undefined">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" (click)="gotoTop()" data-dismiss="modal" aria-label="Close">
           <!-- <span aria-hidden="true">&times;</span> -->
           <img src="../../assets/cross.svg" alt="">
         </button>
-        <a href="{{showCurrentImageURL}}" download>Download</a>
+        <a href="{{showCurrentImageURL}}" class="float-right" download>Download</a>
         <img width="300" height="300" class="w-100 h-100 shadow-1-strong rounded" alt="{{imageName}}"
           [defaultImage]="defaultImage" [lazyLoad]="showCurrentImageURL" />
-      </div>
-      <div class="modal-footer">
-        <button class="left-btn carousel-control-prev" (click)="prevNext(-1)" [disabled]="left">
-          <div class="arrow-icon">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </div>
-        </button>
-        <button class="right-btn carousel-control-next" (click)="prevNext(1)" [disabled]="right">
-          <div class="arrow-icon">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </div>
-        </button>
+          <button class="left-btn carousel-control-prev" (click)="prevNext(-1)" [disabled]="left">
+            <div class="arrow-icon">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </div>
+          </button>
+          <button class="right-btn carousel-control-next" (click)="prevNext(1)" [disabled]="right">
+            <div class="arrow-icon">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </div>
+          </button>
       </div>
     </div>
   </div>

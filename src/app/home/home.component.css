@@ -67,3 +67,10 @@ img {
     border: none;
     color: #000;
 }
+img.w-100.shadow-1-strong.rounded.active.ng-lazyloaded {
+    box-shadow: 0 0 15px #009688;
+    box-sizing: border-box;
+}
+div#detailsModal{
+    background: #9a9a9af0 !important;
+}

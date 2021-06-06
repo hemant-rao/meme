@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   dataItem;
   left = true;
   right = true;
+  currentId:number;
   ngOnInit(): void {
     this.refreshEmpList();
     this.defaultImage = this.PhotoUrl + this.defaultImage;
@@ -31,10 +32,10 @@ export class HomeComponent implements OnInit {
   showImage(dataItem: any) {
     this.dataItem = dataItem;
     this.imageName = dataItem.EmployeeName;
-    this.id = dataItem.id;
+    this.currentId = dataItem.EmployeeId;
     this.showCurrentImageURL = this.PhotoUrl + dataItem.PhotoFileName;
     var index = this.EmployeeList.findIndex(
-      (x) => x.EmployeeId === this.dataItem.EmployeeId
+      (x: { EmployeeId: any; }) => x.EmployeeId === this.dataItem.EmployeeId
     );
     var indexVal = index + 1;
     if (index !== -1 && indexVal > -1 && indexVal !== 0 && index > 0) {
@@ -71,5 +72,34 @@ export class HomeComponent implements OnInit {
     } else {
       // alert('this is first value');
     }
+  }
+  gotoTop() {
+    var element = document.querySelector('img.w-100.active');
+    // console.log(element);
+    // let bounds = element.getBoundingClientRect();
+    // let viewWidth = document.documentElement.clientWidth;
+    // let viewHeight = document.documentElement.clientHeight;
+    // var topPos = bounds.top + window.scrollY;
+    // var bottomPos = bounds.bottom + window.scrollX;
+    // console.log(bounds, viewHeight, viewWidth, "topPos", topPos);
+    // if (bounds['left'] < 0) return false;
+    // if (bounds['top'] < 0) return false;
+    // if (bounds['right'] > viewWidth) return false;
+    // if (bounds['bottom'] > viewHeight) return false;
+    if (element.getBoundingClientRect() != undefined && element.getBoundingClientRect() != null){
+      var topPos = element.getBoundingClientRect().top + window.scrollY;
+      topPos = topPos - 100;
+      console.log("topPos if not null", topPos)
+    } else {
+      var topPos = window.scrollY;
+      console.log("topPos null", topPos)
+    }
+   
+    // var leftPos = element.getBoundingClientRect().left + window.scrollX;
+    window.scroll({
+      top: topPos,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }
