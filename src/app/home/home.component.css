@@ -3,13 +3,18 @@ img {
 }
 
 .modal-body img {
-    max-height: 70vh;
+    max-height: fit-content;
+    height: 100%;
 }
-
+.modal-dialog{
+    margin: 1.2rem auto;
+}
 .modal-header .close {
     outline: none;
 }
-
+.modal-body .card {
+    border: 0px solid;
+}
 .left-btn, .right-btn {
     background: transparent;
     padding: 0;
@@ -17,8 +22,8 @@ img {
     border: none;
     cursor: pointer;
     outline: none;
-    max-height: calc(100% - 60px);
-    margin-top: 60px;
+    /* max-height: calc(100% - 60px);
+    margin-top: 60px; */
 }
 
 .left-btn[disabled], .right-btn[disabled] {
@@ -50,8 +55,8 @@ img {
 
 .close {
     position: absolute;
-    top: -14px;
-    right: -14px;
+    top: -31px;
+    right: -31px;
     padding: 0;
     margin: 0;
     vertical-align: middle;
@@ -77,7 +82,7 @@ img {
     color: #000;
 }
 
-img.w-100.shadow-1-strong.rounded.active {
+img.w-100.rounded.active {
     box-shadow: 0 0 15px #009688;
     border-radius: 0 !important;
     box-sizing: border-box;
