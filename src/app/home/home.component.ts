@@ -36,10 +36,7 @@ export class HomeComponent implements OnInit {
     var index = this.EmployeeList.findIndex(
       (x) => x.EmployeeId === this.dataItem.EmployeeId
     );
-    // let forRight = index + 1;
-
     var indexVal = index + 1;
-    console.log("forRight", indexVal, index);
     if (index !== -1 && indexVal > -1 && indexVal !== 0 && index > 0) {
       if (this.EmployeeList.length > indexVal) {
         // enable left right button if index lessthen employee length and grater then -1 and 0
