@@ -1,13 +1,16 @@
 img {
     height: unset;
 }
+
 .modal-body img {
     max-height: 70vh;
 }
-.modal-header .close{
+
+.modal-header .close {
     outline: none;
 }
-.left-btn, .right-btn{
+
+.left-btn, .right-btn {
     background: transparent;
     padding: 0;
     margin: 0;
@@ -17,21 +20,25 @@ img {
     max-height: calc(100% - 60px);
     margin-top: 60px;
 }
-.left-btn[disabled], .right-btn[disabled]{
+
+.left-btn[disabled], .right-btn[disabled] {
     opacity: .7;
     cursor: not-allowed;
 }
-.left-btn[disabled] div, .right-btn[disabled] div{
+
+.left-btn[disabled] div, .right-btn[disabled] div {
     background: #ff11007d;
 }
-.arrow-icon{
+
+.arrow-icon {
     padding: 5px;
     background: #009688;
     border-radius: 50%;
     height: 40px;
     width: 40px;
-} 
-.arrow-icon span{
+}
+
+.arrow-icon span {
     vertical-align: middle;
     text-align: center;
     height: 100%;
@@ -40,6 +47,7 @@ img {
     border: 0;
     outline: 0;
 }
+
 .close {
     position: absolute;
     top: -14px;
@@ -53,6 +61,7 @@ img {
     color: #000;
     opacity: .75;
 }
+
 .close img {
     position: absolute;
     top: 0px;
@@ -67,10 +76,26 @@ img {
     border: none;
     color: #000;
 }
-img.w-100.shadow-1-strong.rounded.active.ng-lazyloaded {
+
+img.w-100.shadow-1-strong.rounded.active {
     box-shadow: 0 0 15px #009688;
+    border-radius: 0 !important;
     box-sizing: border-box;
+    transform: scale(1);
+    animation: pulse-animation 2.5s 5;
 }
-div#detailsModal{
+
+div#detailsModal {
     background: #9a9a9af0 !important;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px #0096883b;
+        border: 2px solid #0096883b;
+    }
+    100% {
+        box-shadow: 0 0 0 5px #0096883b;
+        border: 2px solid #0096883b;
+    }
 }
