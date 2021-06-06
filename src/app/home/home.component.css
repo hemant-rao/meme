@@ -2,6 +2,41 @@ img {
     height: unset;
 }
 .modal-body img {
-    /* height: calc(100vh - 50px); */
     max-height: 70vh;
+}
+.modal-header .close{
+    outline: none;
+}
+.left-btn, .right-btn{
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    max-height: calc(100% - 60px);
+    margin-top: 60px;
+}
+.left-btn[disabled], .right-btn[disabled]{
+    opacity: .7;
+    cursor: not-allowed;
+}
+.left-btn[disabled] div, .right-btn[disabled] div{
+    background: #ff11007d;
+}
+.arrow-icon{
+    padding: 5px;
+    background: #009688;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+} 
+.arrow-icon span{
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+    max-width: 15px;
+    padding: 0;
+    border: 0;
+    outline: 0;
 }
