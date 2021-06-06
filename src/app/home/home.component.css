@@ -25,7 +25,9 @@ img {
     /* max-height: calc(100% - 60px);
     margin-top: 60px; */
 }
-
+.modal-content.no--shadow {
+    margin: auto 1rem;
+}
 .left-btn[disabled], .right-btn[disabled] {
     opacity: .7;
     cursor: not-allowed;

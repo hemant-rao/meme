@@ -6,7 +6,7 @@
           [ngClass]="dataItem.EmployeeId == currentId ? 'w-100 rounded active' : 'w-100 rounded hemant'"
           [defaultImage]="defaultImage" [lazyLoad]="PhotoUrl+dataItem.PhotoFileName" alt="{{dataItem.EmployeeName}}"
           data-toggle="modal" data-target="#detailsModal" data-keyboard="false" />
-        <a href="{{PhotoUrl}}{{dataItem.PhotoFileName}}" class="text-right float-right" download>Download</a>
+        <a href="{{PhotoUrl}}{{dataItem.PhotoFileName}}" class="text-right float-right" target="_blank" download="{{dataItem.PhotoFileName}}">Download</a>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
             <!-- <span aria-hidden="true">&times;</span> -->
             <img src="../../assets/cross.svg" alt="">
           </button>
-          <a href="{{showCurrentImageURL}}" class="text-right float-right" download>Download</a>
+          <a href="{{showCurrentImageURL}}" target="_blank" class="text-right float-right" download="{{dataItem.PhotoFileName}}">Download</a>
           <img width="300" height="300" class="w-100" alt="{{imageName}}"
             [defaultImage]="defaultImage" [lazyLoad]="showCurrentImageURL" />
         </div>
