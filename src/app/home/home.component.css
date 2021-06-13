@@ -22,8 +22,11 @@ img {
     border: none;
     cursor: pointer;
     outline: none;
-    /* max-height: calc(100% - 60px);
-    margin-top: 60px; */
+    max-height: unset;
+    margin: auto 0;
+    height: 40px;
+    width: 40px;
+    vertical-align: middle;
 }
 .modal-content.no--shadow {
     margin: auto 1rem;
@@ -105,4 +108,7 @@ div#detailsModal {
         box-shadow: 0 0 0 5px #0096883b;
         border: 2px solid #0096883b;
     }
+}
+.list img {
+    cursor: pointer;
 }

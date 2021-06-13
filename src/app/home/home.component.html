@@ -1,9 +1,9 @@
 <div class="container">
   <div class="col-12">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let dataItem of EmployeeList">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 list" *ngFor="let dataItem of EmployeeList">
         <img width="300" height="300" (click)="showImage(dataItem)" attr.data-id="{{dataItem.EmployeeId}}"
-          [ngClass]="dataItem.EmployeeId == currentId ? 'w-100 rounded active' : 'w-100 rounded hemant'"
+          [ngClass]="dataItem.EmployeeId == currentId ? 'w-100 rounded active' : 'w-100 rounded'"
           [defaultImage]="defaultImage" [lazyLoad]="PhotoUrl+dataItem.PhotoFileName" alt="{{dataItem.EmployeeName}}"
           data-toggle="modal" data-target="#detailsModal" data-keyboard="false" />
         <a href="{{PhotoUrl}}{{dataItem.PhotoFileName}}" class="text-right float-right" target="_blank" download="{{dataItem.PhotoFileName}}">Download</a>
