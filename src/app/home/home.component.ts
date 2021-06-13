@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
   }
   refreshEmpList() {
     this.service.getEmpList().subscribe((data) => {
-      this.EmployeeList = data;
+      /* reverse data to show new image on top */
+      this.EmployeeList = data.reverse();
     });
   }
   showImage(dataItem: any) {
