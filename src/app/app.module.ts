@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule } from '@angular/router';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import lazyLoading
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
@@ -63,7 +63,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     }
   ])
   ],
-  providers: [SharedService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [SharedService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

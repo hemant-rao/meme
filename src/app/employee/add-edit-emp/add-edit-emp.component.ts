@@ -74,7 +74,7 @@ export class AddEditEmpComponent implements OnInit {
           PhotoFileName: this.PhotoFileName,
         };
         this.service.addEmployee(val).subscribe((res) => {
-          alert(res.toString());
+          // alert(res.toString());///
           // set empty after upload
           if (res != undefined) {
             this.PhotoFilePaths = [];
