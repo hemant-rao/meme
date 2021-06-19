@@ -1,0 +1,72 @@
+<div class="container d-flex flex-row bd-highlight mb-3">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="form-froup row">
+                    <label class="col-12 col-form-label">Text form image</label>
+                    <div class="col-sm-12 mb-3">
+                        <textarea type="text" class="form-control" [(ngModel)]="EmployeeName"
+                            placeholder="Enter Employee Name"></textarea>
+                    </div>
+                    <label class="col-12 col-form-label">Category</label>
+                    <div class="col-12 mb-3">
+                        <select class="form-control" [(ngModel)]="Department">
+                            <option>--Select--</option>
+                            <option *ngFor="let depName of DepartmentsList">
+                                {{depName.DepartmentName}}
+                            </option>
+                        </select>
+                    </div>
+                    <label class="col-12 col-form-label">Date of joining</label>
+                    <div class="col-12 mb-3">
+                        <input type="date" [(ngModel)]="DateOfJoining">
+                    </div>
+                </div>
+                <button (click)="addEmployee()" class="btn btn-primary right">
+                    Add Image
+                </button>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="row">
+                    <div for="upload" class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                        <input id="upload" type="file" multiple="" for="upload" (change)="uploadPhoto($event, test)"
+                            class="form-control border-0">
+                        <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                        <div for="upload" class="input-group-append">
+                            <label for="upload" class="btn btn-light m-0 rounded-pill px-4">
+                                <i for="upload" class="fa fa-cloud-upload mr-2 text-muted"></i>
+                                <small for="upload" class="text-uppercase font-weight-bold text-muted">Choose
+                                    file</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <div class="row" *ngIf="images != undefined">
+                            <div class="col-6 col-lg-3 mb-3" *ngFor="let url of images">
+                                <div class="row">
+                                    <img [src]="url" height="150" width="200px" style="margin: 3px;"
+                                        alt="Upload image here" class="img-fluid rounded shadow-sm mx-auto d-block">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 mt-4 mb-3 alertbox_cont" *ngIf="alertbox_handel">
+    <div class="col-12 mb-3" *ngFor="let img of uploaded_image_array">
+        <div class="row">
+            <div [ngClass]="alertBox ? 'alert alert-success alert-dismissible alertbox fade show' : 'alert alert-danger alert-dismissible alertbox fade show'"
+                role="alert">
+                <strong>{{resp}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 // import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import lazyLoading
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { UploadComponent } from './employee/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     AddEditEmpComponent,
     HomeComponent,
     AdminComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,29 +41,31 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     FormsModule,
     ReactiveFormsModule,
     LazyLoadImageModule,
-    RouterModule.forRoot([{
-      path: '',
-      redirectTo: 'home',
-      pathMatch: 'full' 
-    },
-    {
-      path: 'home',
-      component: HomeComponent 
-    },
-    {
-      path: 'admin',
-      component: AdminComponent,
-      children: [
-        { path: 'employee', component: EmployeeComponent },
-        { path: 'department', component: DepartmentComponent },
-      ],
-    },
-    {
-      path: '**',
-      redirectTo: '',
-      pathMatch: 'full' 
-    }
-  ])
+    RouterModule.forRoot([
+      // {
+      //   path: '',
+      //   redirectTo: '/',
+      //   pathMatch: 'full',
+      // },
+      // {
+      //   path: 'home',
+      //   component: HomeComponent,
+      // },
+      // { path: 'upload', component: UploadComponent },
+      // {
+      //   path: 'admin',
+      //   component: AdminComponent,
+      //   children: [
+      //     { path: 'employee', component: EmployeeComponent },
+      //     { path: 'department', component: DepartmentComponent },
+      //   ],
+      // },
+      // {
+      //   path: '**',
+      //   redirectTo: '',
+      //   pathMatch: 'full',
+      // },
+    ]),
   ],
   providers: [SharedService],
   bootstrap: [AppComponent],
